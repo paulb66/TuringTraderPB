@@ -254,7 +254,8 @@ namespace TuringTrader.BooksAndPubsV2
                 for (var count = 1; count <= PERIOD; count++)
                 {
                     X.Value = Signal[count - 1];
-                    Y.Value = TradeStation.Cosine(360.0 * (count - 1) / PERIOD);
+                    //Y.Value = TradeStation.Cosine(360.0 * (count - 1) / PERIOD);
+                    Y.Value = Math.Cos(360.0 * (count - 1) / PERIOD);
                     Sx.Value = Sx[0] + X[0];
                     Sy.Value = Sy[0] + Y[0];
                     Sxx.Value = Sxx[0] + X[0] * X[0];
@@ -275,7 +276,8 @@ namespace TuringTrader.BooksAndPubsV2
                 for (var count = 1; count <= PERIOD; count++)
                 {
                     X.Value = Signal[count - 1];
-                    Y.Value = -TradeStation.Sine(360.0 * (count - 1) / PERIOD);
+                    //Y.Value = -TradeStation.Sine(360.0 * (count - 1) / PERIOD);
+                    Y.Value = -Math.Sin(360.0 * (count - 1) / PERIOD);
                     Sx.Value = Sx[0] + X[0];
                     Sy.Value = Sy[0] + Y[0];
                     Sxx.Value = Sxx[0] + X[0] * X[0];
